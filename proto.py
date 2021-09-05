@@ -30,7 +30,7 @@ class main(object):
         while True:
             if True:
                 os.system(clear)
-                print(Fore.LIGHTMAGENTA_EX + intro + Fore.LIGHTMAGENTA_EX)
+                print(Fore.LIGHTMAGENTA_EX + Fore.LIGHTMAGENTA_EX)
                 print(Fore.LIGHTMAGENTA_EX + f"Botted:{self.botted}\n")
                 for i in range(len(self.printing) - 10, len(self.printing)):
                     try:
