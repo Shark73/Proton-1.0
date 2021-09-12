@@ -83,7 +83,7 @@ def bot():
 
 
 time.sleep(7)
-print("Сколько потоков? Рекомендуемый минимум 500")
+print("Сколько потоков? Рекомендуемое количество потоков - 500")
 maxthreads = int(input("[+] : "))
 threading.Thread(target=a.printservice).start()
 num = 0
