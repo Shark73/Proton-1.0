@@ -34,9 +34,10 @@ class main(object):
                 print(Fore.LIGHTMAGENTA_EX + f"Botted:{self.botted}\n")
                 for i in range(len(self.printing) - 10, len(self.printing)):
                     try:
-                        print(" ")
+                        print(self.printing[i])
                     except (ValueError, Exception):
                         pass
+		time.sleep(0.5)
 a = main()
 class proxy():
 
