@@ -9,15 +9,15 @@ import platform
 import requests
 from colorama import Fore, init
 
-clear = "clear"
-os.system(clear)
+if platform.system() == "Windows": #checking OS
+    clear = "cls"
+else:
+    clear = "clear"
 
-
-def randomName(size=11, chars=string.ascii_letters + string.digits):
-    return ''.join(random.choice(chars) for i in range(size))
+proxy_loading = input("[1] Load Proxys from APIs\n[2] Load Proxys from proxys.txt\n")
 
 print(" Введите ID стрима всё что после https://www.youtube.com/watch?v= скопируйте и вставьте")
-token = input("[ID] : ")
+token = input("ID?\n")
 url= "https://m.youtube.com/watch?v=" + token
 url2 = "https://s.youtube.com/api/stats/watchtime?ns=yt&el=detailpage&cpn=Syr16u8qwHnPkVqI&docid=" + token + "&ver=2&cmt=2094&ei=1EJtXou2C6eoxN8PpqqNqAg&fmt=133&fs=0&rt=1769&of=rkW8h_g-Pta1U6EIuWGdvw&euri&lact=7275&live=dvr&cl=300532980&state=playing&vm=CAEQABgEKhhJc0gwZ2w0QmFfbTBWSXlWNm9ITmRRPT06MkFOcHN5N0FhUWlHOHl5QkQySUF1OGt6amlZYjZwN3hzNzRXV3hhTEE4NDZVU1h2TTV3&volume=100&c=MWEB&cver=2.20200313.03.00&cplayer=UNIPLAYER&cbrand=apple&cbr=Safari%20Mobile&cbrver=12.1.15E148&cmodel=iphone&cos=iPhone&cosver=12_2&cplatform=MOBILE&delay=5&hl=ru&cr=IQ&rtn=2069&afmt=140&lio=1556394045.182&idpj=&ldpj=&rti=1769&muted=0&st=2094&et=2394"
 class main(object):
@@ -42,15 +42,19 @@ class main(object):
 		time.sleep(0.5)
 a = main()
 class proxy():
-
+  global proxy_loading
     def update(self):
         while True:
+          if proxy_loading == "2":
             data = ''
+	    data = open("proxys.txt", "r").read()
+	    self.splited += data.split("\n")
+	  else:
+                data = ''
             urls = ["https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&ssl=yes","https://www.proxy-list.download/api/v1/get?type=https&anon=elite"]
             for url in urls:
                 data += requests.get(url).text
-                
-            self.splited += data.split("\r\n") #scraping and splitting proxies
+                self.splited += data.split("\r\n") #scraping and splitting proxies
             time.sleep(600)
     
     def get_proxy(self):
@@ -81,11 +85,11 @@ def bot():
             
             
             a.botted += 1
-        except Exception as E:
+        except:
             pass
 
 
-time.sleep(7)
+time.sleep(5)
 maxthreads = int(input("Сколько потоков? Рекомендуемое количество потоков - 500-1000\n")
 threading.Thread(target=a.printservice).start()
 num = 0
