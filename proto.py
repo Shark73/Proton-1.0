@@ -44,11 +44,12 @@ class proxy():
     global proxy_loading
     def update(self):
         while True:
-          if proxy_loading == "2":
-            data = ''
-	    data = open("proxys.txt", "r").read()
-	    self.splited += data.split("\n")
-	  else:
+
+            if proxy_loading == "2":
+                data = ''
+                data = open("proxys.txt", "r").read()
+                self.splited += data.split("\n")
+            else:
                 data = ''
             urls = ["https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&ssl=yes","https://www.proxy-list.download/api/v1/get?type=https&anon=elite"]
             for url in urls:
