@@ -41,7 +41,7 @@ class main(object):
                 time.sleep(0.5)
 a = main()
 class proxy():
-  global proxy_loading
+    global proxy_loading
     def update(self):
         while True:
           if proxy_loading == "2":
