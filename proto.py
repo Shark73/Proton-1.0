@@ -84,8 +84,7 @@ def bot():
 
 
 time.sleep(7)
-print("Сколько потоков? Рекомендуемое количество потоков - 500")
-maxthreads = int(input("[+] : "))
+maxthreads = int(input("Сколько потоков? Рекомендуемое количество потоков - 500-1000\n")
 threading.Thread(target=a.printservice).start()
 num = 0
 while num < maxthreads :
