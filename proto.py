@@ -4,6 +4,8 @@ import string
 import threading
 import time
 from queue import Queue
+import platform
+
 import requests
 from colorama import Fore, init
 
@@ -16,7 +18,7 @@ def randomName(size=11, chars=string.ascii_letters + string.digits):
 
 print(" Введите ID стрима всё что после https://www.youtube.com/watch?v= скопируйте и вставьте")
 token = input("[ID] : ")
-url= "https://m.youtube.com/watch?v=" + token
+url= "https://youtube.com/watch?v=" + token
 url2 = "https://s.youtube.com/api/stats/watchtime?ns=yt&el=detailpage&cpn=Syr16u8qwHnPkVqI&docid=" + token + "&ver=2&cmt=2094&ei=1EJtXou2C6eoxN8PpqqNqAg&fmt=133&fs=0&rt=1769&of=rkW8h_g-Pta1U6EIuWGdvw&euri&lact=7275&live=dvr&cl=300532980&state=playing&vm=CAEQABgEKhhJc0gwZ2w0QmFfbTBWSXlWNm9ITmRRPT06MkFOcHN5N0FhUWlHOHl5QkQySUF1OGt6amlZYjZwN3hzNzRXV3hhTEE4NDZVU1h2TTV3&volume=100&c=MWEB&cver=2.20200313.03.00&cplayer=UNIPLAYER&cbrand=apple&cbr=Safari%20Mobile&cbrver=12.1.15E148&cmodel=iphone&cos=iPhone&cosver=12_2&cplatform=MOBILE&delay=5&hl=ru&cr=IQ&rtn=2069&afmt=140&lio=1556394045.182&idpj=&ldpj=&rti=1769&muted=0&st=2094&et=2394"
 class main(object):
     def __init__(self):
