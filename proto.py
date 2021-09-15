@@ -89,7 +89,7 @@ def bot():
             pass
 
 
-maxthreads = int(input("Сколько потоков? Рекомендуемое количество потоков - 500-1000\n")
+maxthreads = int(input("Сколько потоков? Рекомендуемое количество потоков - 500-1000\n"))
 
 threading.Thread(target=a.printservice).start()
 num = 0
